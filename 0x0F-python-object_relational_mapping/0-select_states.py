@@ -3,16 +3,25 @@
 """
 Module: list_states
 Function: list_states
-Purpose: Connect to MySQL database and retrieve a list of states from the hbtn_0e_0_usa database, sorted by ID
+Purpose: Connect to MySQL database and retrieve a list of states
+from the hbtn_0e_0_usa
+database, sorted by ID
 """
+
 
 import MySQLdb
 import sys
 
 
-def list_states(mysql_username: str, mysql_password: str, database_name: str) -> None:
+def list_states(
+    mysql_username: str,
+    mysql_password: str,
+    database_name: str
+) -> None:
+
     """
-    Retrieve and display a list of states sorted by ID from the specified database.
+    Retrieve and display a list of states sorted by ID from
+    the specified database.
 
     Args:
         mysql_username: MySQL username (str)
@@ -52,6 +61,9 @@ def list_states(mysql_username: str, mysql_password: str, database_name: str) ->
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: python list_states.py <mysql_username> <mysql_password> <database_name>")
+        print("Usage: python list_states.py "
+              "<mysql_username> <mysql_password> "
+              "<database_name>")
+
     else:
         list_states(sys.argv[1], sys.argv[2], sys.argv[3])
